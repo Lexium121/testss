@@ -1,0 +1,191 @@
+uses SysUtils, Classes;
+var Figth_Flag:boolean;
+Item: TL2Item;
+var obj: TL2NPC;
+obj2: TL2Effect;
+Enemy: TL2Live;
+procedure farm20;
+begin
+if User.inrange(85798, 148620, -3400, 250, 150) then begin
+Engine.LoadConfig('sp');
+delay (1000);
+Engine.UseItem(9516);
+delay (5000);
+Engine.FaceControl(0,true);
+print ('включаем бафф');
+delay (20000);
+Engine.FaceControl(0,false);
+print ('ждем баффа');
+print ('баффнулись, бежим');
+Engine.MoveTo(85542, 148609, -3428);
+Engine.MoveTo(84860, 148616, -3428);
+Engine.MoveTo(84445, 148607, -3428);
+Engine.MoveTo(84064, 148588, -3428);
+Engine.MoveTo(83600, 148566, -3431);
+Engine.MoveTo(83565, 148178, -3431);
+Engine.MoveTo(83469, 148015, -3431);
+Engine.MoveTo(83413, 147929, -3431);
+Engine.SetTarget(30080);
+Engine.DlgOpen();
+delay (1000);
+Engine.DlgSel(1);
+delay (1000);
+Engine.DlgSel(3);
+delay (5000);
+Engine.MoveTo(16279, 142899, -2732);
+Engine.SetTarget(31760);
+Engine.DlgOpen();
+delay (1000);
+Engine.DlgSel(3);
+delay (1000);
+Engine.DlgSel(4);
+delay (1000);
+Engine.NpcTrade(false,[9731,1]);
+PlaySound (exepath + '\sounds\' + 'die' +'.wav', False);
+delay (10000);
+Engine.MoveTo(16322, 143774, -2923);
+Engine.MoveTo(16954, 144652, -3025); //buffer
+Engine.MoveTo(17217, 145187, -3074);
+Engine.MoveTo(18291, 145679, -3143);
+Engine.MoveTo(20498, 145734, -3169);
+Engine.MoveTo(21329, 145844, -3172);
+Engine.MoveTo(21660, 147068, -3415);
+Engine.MoveTo(21267, 147350, -3451);
+Engine.LoadZone ('dion');
+Engine.FaceControl(0,true);   
+while  User.Level<23 do begin
+if User.Dead then begin
+Engine.FaceControl(0,false);
+Engine.gohome;
+delay(15000);
+farm20;
+end;
+end;
+end;
+end;
+procedure farm40;
+begin
+Engine.UseItem(736);
+delay (20000);
+Engine.FaceControl(0,false);
+print ('выключаем бой лвл>24');
+engine.say('.menu');
+delay (1000);
+print ('берем профу');
+delay (1000);
+Engine.BypassToServer('cm_show_page', True)  ;
+delay (1000);
+Engine.BypassToServer('cm_request_change?class=11', True)  ;
+delay (1000);
+Engine.BypassToServer('cm_change?class=11&price=0', True)  ;
+delay (1000);
+print ('взяли профу');
+Engine.UpdateSkillList;
+delay (1000);
+Engine.UseItem(9731);
+print ('одеваем Д пушку когда получаем 20лвл');
+delay (1000);
+ if User.inrange(19134,144847,-3096, 250, 150) then begin
+  Engine.MoveTo(19134,144847,-3096);
+  Engine.MoveTo(18041,144052,-3057);
+  Engine.MoveTo(16727,144111,-2980);
+  Engine.MoveTo(15933,143331,-2771);  
+  Engine.MoveTo(15628,142920,-2704);
+end;
+if User.inrange(18954,144428,-3096, 250, 150) then begin
+  Engine.MoveTo(18954,144428,-3096);
+  Engine.MoveTo(18600,144387,-3070);
+  Engine.MoveTo(17733,143924,-3037);
+  Engine.MoveTo(16711,144167,-2980);
+  Engine.MoveTo(16622,144034,-2932);
+  Engine.MoveTo(15963,143381,-2784);  
+  Engine.MoveTo(15628,142920,-2704);
+end;
+if User.inrange(19012,145140,-3120, 250, 150) then begin
+  Engine.MoveTo(19012,145140,-3120);
+  Engine.MoveTo(19021,145126,-3123);
+  Engine.MoveTo(17600,145497,-3079);
+  Engine.MoveTo(16468,144129,-2964);  
+  Engine.MoveTo(15628,142920,-2704);
+end;
+if User.inrange(19613,145607,-3104, 250, 150) then begin
+  Engine.MoveTo(19613,145607,-3104);
+  Engine.MoveTo(17638,145591,-3084);
+  Engine.MoveTo(16214,143659,-2863);  
+  Engine.MoveTo(15628,142920,-2704);
+end;
+if User.inrange(18576,145136,-3104, 250, 150) then begin
+  Engine.MoveTo(18576,145136,-3104);
+  Engine.MoveTo(17727,145541,-3082);
+  Engine.MoveTo(16414,144174,-2969);  
+  Engine.MoveTo(15628,142920,-2704);
+end;
+if User.inrange(17398,145456,-3048, 250, 150) then begin
+  Engine.MoveTo(17398,145456,-3048);
+  Engine.MoveTo(17727,145541,-3082);
+  Engine.MoveTo(16414,144174,-2969);  
+  Engine.MoveTo(15628,142920,-2704);
+end;
+if User.inrange(17144,145055,-3024, 250, 150) then begin
+  Engine.MoveTo(17144,145055,-3024);
+  Engine.MoveTo(16350,143905,-2923);
+  Engine.MoveTo(15628,142920,-2704);
+end;
+if User.inrange(18078,145925,-3112, 250, 150) then begin
+  Engine.MoveTo(18078,145925,-3112);
+  Engine.MoveTo(16559,144353,-2987);
+  Engine.MoveTo(15628,142920,-2704);
+end;
+if User.inrange(19150,143941,-3056, 250, 150) then begin
+  Engine.MoveTo(19150,143941,-3056);
+  Engine.MoveTo(18112,145633,-3104);
+  Engine.MoveTo(17108,145059,-3031);
+  Engine.MoveTo(16469,144176,-2969);  
+  Engine.MoveTo(15628,142920,-2704);
+end;
+if User.inrange(18512,145536,-3120, 250, 150) then begin
+  Engine.MoveTo(18512,145536,-3120);
+  Engine.MoveTo(17226,145360,-3048);
+  Engine.MoveTo(16419,143955,-2935);  
+  Engine.MoveTo(15628,142920,-2704);
+end;
+if User.inrange(18717,145711,-3080, 250, 150) then begin
+  Engine.MoveTo(18717,145711,-3080);
+  Engine.MoveTo(17226,145360,-3048);
+  Engine.MoveTo(16419,143955,-2935);  
+  Engine.MoveTo(15628,142920,-2704);
+end;
+Engine.SetTarget(30059);
+Engine.DlgOpen();
+delay (500);
+Engine.DlgSel(1);
+delay (500);
+Engine.DlgSel(10);
+delay (5000);
+Engine.MoveTo(16800, 114180, -3466);
+Engine.MoveTo(16582, 114092, -3507);
+Engine.MoveTo(16487, 113787, -3606);
+Engine.MoveTo(16606, 113254, -3607);
+Engine.MoveTo(17412, 112414, -3607);
+Engine.MoveTo(18819, 111015, -3713);
+Engine.MoveTo(19610, 110736, -3716);
+Engine.MoveTo(20181, 108941, -3736);
+Engine.MoveTo(20329, 107518, -3704);
+Engine.LoadZone ('cruma');
+Engine.FaceControl(0,true);
+print ('start farm cruma');
+while (User.Level>22)    and (User.Level<40) do begin
+if User.Dead then begin
+Engine.FaceControl(0,false);
+Engine.gohome;
+delay(15000);
+farm40;
+end;
+end;
+end;
+begin
+while Engine.Status= lsOnline do begin
+if  User.Level<23 then farm20;
+if (User.Level>22)    and (User.Level<40)   then farm40;
+end; 
+end.
